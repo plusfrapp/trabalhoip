@@ -1,3 +1,12 @@
+void div(int a, int b, double * c);
+void shiftDir(int *a, int b);
+void abs(int *a);
+void and(int a, int b, char * str);
+
+int main() {
+    return 0;
+}
+
 void div(int a, int b, double * c){
     *c = a/(double)b;
 }
