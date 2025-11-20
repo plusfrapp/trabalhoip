@@ -5,12 +5,6 @@ void or_bit_a_bit(int *entrada1, int *entrada2, int *saida); // Função 9
 void min(int *entrada1, int *entrada2, int *saida); // Função 16
 void maior_igual(int *entrada1, int *entrada2, int *saida); //Função 23
 
-int main(){
-
-    return 0;
-} 
-
-
 //2
 void sub(int *entrada1, int *entrada2, int *saida){
     *saida = *entrada1 - *entrada2;
