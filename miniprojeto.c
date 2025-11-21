@@ -1,39 +1,33 @@
 #include <stdio.h>
-void Resto(int entrada1, int entrada2, int *resposta);
-void Shift_A_Esquerda(int entrada1, int entrada2, int *resposta);
-void Igualdade(int entrada1, int entrada2, int *resposta);
-void NAND(int entrada1, int entrada2, int *resposta);
-void potencia(int entrada1, int entrada2, int *resposta);
-void div(int a, int b, double * c);
+void sub(int *entrada1, int *entrada2, int *saida); // Função 2
+void div(int a, int b, double * c); //4
+void Resto(int entrada1, int entrada2, int *resposta); //5
+void potencia(int entrada1, int entrada2, int *resposta); //6
+void or_bit_a_bit(int *entrada1, int *entrada2, int *saida); // Função 9
+void shiftDir(int *a, int b); //11
+void Shift_A_Esquerda(int entrada1, int entrada2, int *resposta); //12
+void min(int *entrada1, int *entrada2, int *saida); // Função 16
+void abs(int *a); //18
+void Igualdade(int entrada1, int entrada2, int *resposta); //19
+void maior_igual(int *entrada1, int *entrada2, int *saida); //Função 23
+void and(int a, int b, char * str); //25
+void NAND(int entrada1, int entrada2, int *resposta); //26
 
 int main(){
 
     return 0;
 }
 
-void Resto(int entrada1, int entrada2, int *resposta){
+void sub(int *entrada1, int *entrada2, int *saida){ //2
+    *saida = *entrada1 - *entrada2;
+}
+void div(int a, int b, double * c){ //4
+    *c = a/(double)b;
+}
+void Resto(int entrada1, int entrada2, int *resposta){ //5
     *resposta = entrada1%entrada2;
 }
-
-void Shift_A_Esquerda(int entrada1, int entrada2, int *resposta){
-    int pow;
-    potencia(2,entrada2,&pow);
-    *resposta = entrada1*pow;
-}
-
-void Igualdade(int entrada1, int entrada2, int *resposta){
-    if(entrada1==entrada2) *resposta = 1;
-    else *resposta = 0;
-}
-
-void NAND(int entrada1, int entrada2, int *resposta){
-    if(entrada1==1 && entrada2==1) *resposta = 0;
-    else *resposta = 1;
-}
-
-
-
-void potencia(int entrada1, int entrada2, int *resposta){
+void potencia(int entrada1, int entrada2, int *resposta){ //6
     int i;
     if(entrada2==0) *resposta = 1;
     else{
@@ -42,4 +36,41 @@ void potencia(int entrada1, int entrada2, int *resposta){
             *resposta *= entrada1;
         }
     }
+}
+void or_bit_a_bit(int *entrada1, int *entrada2, int *saida){ //9
+    *saida = *entrada1 | *entrada2;
+}
+void shiftDir(int *a, int b) { //11
+    *a /= pow(2, b);
+}
+void Shift_A_Esquerda(int entrada1, int entrada2, int *resposta){ //12
+    int pow;
+    potencia(2,entrada2,&pow);
+    *resposta = entrada1*pow;
+}
+void min(int *entrada1, int *entrada2, int *saida){ //16
+    if(*entrada1 < *entrada2) *saida = *entrada1;
+    else *saida = *entrada2;
+}
+void abs(int *a){ //18
+    if(*a < 0) *a *= -1;
+}
+void Igualdade(int entrada1, int entrada2, int *resposta){ //19
+    if(entrada1==entrada2) *resposta = 1;
+    else *resposta = 0;
+}
+void maior_igual(int *entrada1, int *entrada2, int *saida){ //23
+    if(*entrada1 >= *entrada2) *saida = 1;
+    else *saida = 0;
+}
+void and(int a, int b, char * str){ //25
+    int i;
+    char sim[4] = {"SIM"}, nao[4] = {"NAO"};
+
+    if((a==1 && b==0) || (a==0 && b==1)) strcpy(str, nao);
+    if((a==1 && b==1) || (a==0 && b==0)) strcpy(str, sim);
+}
+void NAND(int entrada1, int entrada2, int *resposta){ //26
+    if(entrada1==1 && entrada2==1) *resposta = 0;
+    else *resposta = 1;
 }
