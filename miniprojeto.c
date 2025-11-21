@@ -4,6 +4,7 @@ void Shift_A_Esquerda(int entrada1, int entrada2, int *resposta);
 void Igualdade(int entrada1, int entrada2, int *resposta);
 void NAND(int entrada1, int entrada2, int *resposta);
 void potencia(int entrada1, int entrada2, int *resposta);
+void div(int a, int b, double * c);
 
 int main(){
 
