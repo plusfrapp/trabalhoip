@@ -99,7 +99,7 @@ void fatoracao(int entrada1, int * resposta){ //7
     int i;
     *resposta=1;
     
-    for(i=1;i<entrada1;i++) *resposta*=i;
+    for(i=1;i<=entrada1;i++) *resposta*=i;
     
 }
 void and_bit_a_bit(int entrada1, int entrada2, int *resposta) { //8
@@ -160,6 +160,7 @@ void maximo( int entrada1, int entrada2, int * resposta){ //17
 }
 void absoluto(int entrada1, int *resposta){ //18
     if(entrada1 < 0) *resposta = -1*entrada1;
+    else *resposta = entrada1;
 }
 void Igualdade(int entrada1, int entrada2, int * resposta){ //19
     if(entrada1==entrada2) *resposta = 1;
