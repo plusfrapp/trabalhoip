@@ -34,7 +34,7 @@ void nor( int entrada1, int entrada2, int * resposta); //28
 
 int main(){
 
-    printf("Funcoes disponiveis:\n");
+    printf("Escolha a Função:\n");
     printf("1) Soma (+)\n");
     printf("2) Subtracao (-)\n");
     printf("3) Multiplicacao (*)\n");
@@ -123,13 +123,20 @@ void Shift_A_Esquerda(int entrada1, int entrada2, int * resposta){ //12
 }
 void s_intervalo( int entrada1, int entrada2, long long int * resposta){ //14
 
-    int i,n=entrada2-entrada1+1,temp;
+    long long int soma = 0;
+    int i,temp;
     
     if(entrada1>entrada2){
         temp=entrada1;
         entrada1=entrada2;
         entrada2=temp;
     }
+
+    for (i = entrada1; i <=entrada2; i++) {
+        soma += i;
+    }
+
+    *resposta = soma
 }
 void produtorio_intervalo(int entrada1, int entrada2, long long int *resposta) { //15
     *resposta = 1;
