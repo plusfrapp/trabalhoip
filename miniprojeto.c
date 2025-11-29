@@ -136,7 +136,7 @@ void s_intervalo( int entrada1, int entrada2, long long int * resposta){ //14
         soma += i;
     }
 
-    *resposta = soma
+    *resposta = soma;
 }
 void produtorio_intervalo(int entrada1, int entrada2, long long int *resposta) { //15
     *resposta = 1;
