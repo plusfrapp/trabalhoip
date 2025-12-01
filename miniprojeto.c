@@ -33,8 +33,11 @@ void NAND(int entrada1, int entrada2, int * resposta); //26
 void nor( int entrada1, int entrada2, int * resposta); //28
 
 int main(){
+    int n, entrada1, entrada2, resposta;
+    long long int resposta_lld;
+    double resposta_double;
+    char funcoes[28][30];
 
-    printf("Escolha a Função:\n");
     printf("1) Soma (+)\n");
     printf("2) Subtracao (-)\n");
     printf("3) Multiplicacao (*)\n");
@@ -63,7 +66,204 @@ int main(){
     printf("26) NAND (!&)\n");
     printf("27) OR (||)\n");
     printf("28) NOR (!|)\n");
-  
+    printf("Escolha o numero da função que deseja usar:");
+
+    // 1) Soma
+    if(n==1){
+        scanf("%d%d", &entrada1, &entrada2);
+        soma(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 2) Subtração
+    if(n==2){
+        scanf("%d%d", &entrada1, &entrada2);
+        sub(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 3) Multiplicação
+    if(n==3){
+        scanf("%d%d", &entrada1, &entrada2);
+        multiplicacao(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 4) Divisão
+    if(n==4){
+        scanf("%d%d", &entrada1, &entrada2);
+        div(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %.2lf\n" ,   funcoes[n][0], resposta_double);
+    }
+
+    // 5) Resto
+    if(n==5){
+        scanf("%d%d", &entrada1, &entrada2);
+        Resto(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 6) Potência
+    if(n==6){
+        scanf("%d%d", &entrada1, &entrada2);
+        potencia(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 7) Fatoração
+    if(n==7){
+        scanf("%d", &entrada1);
+        fatoracao(entrada1, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 8) AND bit a bit
+    if(n==8){
+        scanf("%d%d", &entrada1, &entrada2);
+        and_bit_a_bit(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 9) OR bit a bit
+    if(n==9){
+        scanf("%d%d", &entrada1, &entrada2);
+        or_bit_a_bit(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 10) XOR bit a bit
+    if(n==10){
+        scanf("%d%d", &entrada1, &entrada2);
+        xor_bits(entrada1, entrada2, 0, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 11) Shift direita
+    if(n==11){
+        scanf("%d%d", &entrada1, &entrada2);
+        shiftDir(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 12) Shift esquerda
+    if(n==12){
+        scanf("%d%d", &entrada1, &entrada2);
+        Shift_A_Esquerda(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 13) Média
+    if(n==13){
+        scanf("%d%d", &entrada1, &entrada2);
+        media(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 14) Somatório de intervalo
+    if(n==14){
+        scanf("%d%d", &entrada1, &entrada2);
+        s_intervalo(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %lld\n" ,   funcoes[n][0], resposta_lld);
+    }
+
+    // 15) Produtório intervalo
+    if(n==15){
+        scanf("%d%d", &entrada1, &entrada2);
+        produtorio(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %lld\n" ,   funcoes[n][0], resposta_lld);
+    }
+
+    // 16) Mínimo
+    if(n==16){
+        scanf("%d%d", &entrada1, &entrada2);
+        min(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 17) Máximo
+    if(n==17){
+        scanf("%d%d", &entrada1, &entrada2);
+        maximo(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 18) Absoluto
+    if(n==18){
+        scanf("%d", &entrada1);
+        absoluto(entrada1, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 19) Igualdade
+    if(n==19){
+        scanf("%d%d", &entrada1, &entrada2);
+        Igualdade(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 20) Diferente
+    if(n==20){
+        scanf("%d%d", &entrada1, &entrada2);
+        diferente(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 21) Maior que
+    if(n==21){
+        scanf("%d%d", &entrada1, &entrada2);
+        maiorq(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 22) Menor que
+    if(n==22){
+        scanf("%d%d", &entrada1, &entrada2);
+        menor(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 23) Maior igual
+    if(n==23){
+        scanf("%d%d", &entrada1, &entrada2);
+        maior_igual(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 24) Menor igual
+    if(n==24){
+        scanf("%d%d", &entrada1, &entrada2);
+        menor_igual(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 25) AND lógico
+    if(n==25){
+        scanf("%d%d", &entrada1, &entrada2);
+        and(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 26) NAND
+    if(n==26){
+        scanf("%d%d", &entrada1, &entrada2);
+        NAND(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 27) OR lógico
+    if(n==27){
+        scanf("%d%d", &entrada1, &entrada2);
+        OR(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+
+    // 28) NOR lógico
+    if(n==28){
+        scanf("%d%d", &entrada1, &entrada2);
+        nor(entrada1, entrada2, &resposta);
+        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n][0], resposta);
+    }
+    //4 14 15
 
     return 0;
 }
@@ -180,7 +380,8 @@ void maiorq( int entrada1, int entrada2, int * resposta){ //21
 
 }
 void menor_que(int entrada1, int entrada2, int *resposta) { //22
-    *resposta = (entrada1 < entrada2) ? SIM : NAO;
+    if(entrada1 < entrada2) *resposta = 1;
+    else *resposta = 0;
 }
 void maior_igual(int entrada1, int entrada2, int * resposta){ //23
     if(entrada1 >= entrada2) *resposta = 1;
