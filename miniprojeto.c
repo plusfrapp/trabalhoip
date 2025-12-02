@@ -29,6 +29,7 @@ void and_logico(int entrada1, int entrada2, int * resposta); //25
 void NAND(int entrada1, int entrada2, int * resposta); //26
 void OR_logico(int entrada1, int entrada2, int * resposta); //27
 void nor( int entrada1, int entrada2, int * resposta); //28
+void limparTela(void);
 
 int main(){
     int n, entrada1, entrada2, resposta;
@@ -93,222 +94,236 @@ int main(){
     printf("26) NAND (!&)\n");
     printf("27) OR (||)\n");
     printf("28) NOR (!|)\n");
-    printf("Escolha o numero da função que deseja usar: ");
 
-    scanf("%d", &n);
-
-    // 1) Soma
-    if(n==1){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        soma(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 2) Subtração
-    else if(n==2){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        sub(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 3) Multiplicação
-    else if(n==3){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        multiplicacao(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 4) Divisão
-    else if(n==4){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        div(entrada1, entrada2, &resposta_double);
-        printf ("Resultado da operação %s: %.2lf\n" ,   funcoes[n-1], resposta_double);
-    }
-
-    // 5) Resto
-    else if(n==5){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        Resto(entrada1, entrada2, &resposta);diferente(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 6) Potência
-    else if(n==6){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        potencia(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 7) Fatoração
-    else if(n==7){
-        printf("Digite um valor: ");
-        scanf("%d", &entrada1);
-        fatoracao(entrada1, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 8) AND bit a bit
-    else if(n==8){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        and_bit_a_bit(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 9) OR bit a bit
-    else if(n==9){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        or_bit_a_bit(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 10) XOR bit a bit
-    else if(n==10){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        xor_bits(entrada1, entrada2, 0, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 11) Shift direita
-    else if(n==11){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        shiftDir(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 12) Shift esquerda
-    else if(n==12){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        Shift_A_Esquerda(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 13) Média
-    else if(n==13){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        media(entrada1, entrada2, &resposta_double);
-        printf ("Resultado da operação %s: %.2lf\n" ,   funcoes[n-1], resposta_double);
-    }
-
-    // 14) Somatório de intervalo
-    else if(n==14){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        s_intervalo(entrada1, entrada2, &resposta_lld);
-        printf ("Resultado da operação %s: %lld\n" ,   funcoes[n-1], resposta_lld);
-    }
-
-    // 15) Produtório intervalo
-    else if(n==15){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        produtorio_intervalo(entrada1, entrada2, &resposta_lld);
-        printf ("Resultado da operação %s: %lld\n" ,   funcoes[n-1], resposta_lld);
-    }
-
-    // 16) Mínimo
-    else if(n==16){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        min(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 17) Máximo
-    else if(n==17){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        maximo(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 18) Absoluto
-    else if(n==18){
-        printf("Digite um valor: ");
-        scanf("%d", &entrada1);
-        absoluto(entrada1, &resposta);
-        printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
-    }
-
-    // 19) Igualdade
-    else if(n==19){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        Igualdade(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 20) Diferente
-    else if(n==20){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        diferente(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 21) Maior que
-    else if(n==21){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        maiorq(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 22) Menor que
-    else if(n==22){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        menor_que(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 23) Maior igual
-    else if(n==23){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        maior_igual(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 24) Menor igual
-    else if(n==24){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        menor_igual(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 25) AND lógico
-    else if(n==25){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        and_logico(entrada1, entrada2, &resposta);
-        if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
-        else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
-    }
-
-    // 26) NAND
-    else if(n==26){
-        printf("Digite dois valores: ");
-        scanf("%d%d", &entrada1, &entrada2);
-        NAND(entrada1, entrada2, &resposta);
+    while(1){
+        printf("Escolha o numero da função que deseja usar: ");
+        scanf("%d", &n);
+        if(n == 0 || n > 28 || n < 0){
+            if(n > 28 || n < 0) printf("Operacao invalida\n");
+            return 0;
+        }
+        limparTela();
+        printf("\n");
+         // 1) Soma
+         if(n==1){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             soma(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 2) Subtração
+         else if(n==2){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             sub(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 3) Multiplicação
+         else if(n==3){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             multiplicacao(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 4) Divisão
+         else if(n==4){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             if(entrada2==0){
+                 printf("Numero invalido\n");
+             }else{
+                 div(entrada1, entrada2, &resposta_double);
+                 printf ("Resultado da operação %s: %.2lf\n" ,   funcoes[n-1], resposta_double);
+             }
+         }
+     
+         // 5) Resto
+         else if(n==5){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             if(entrada2==0){
+                 printf("Numero invalido\n");
+             }else{
+                 Resto(entrada1, entrada2, &resposta);diferente(entrada1, entrada2, &resposta);
+                 printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+             }
+         }
+     
+         // 6) Potência
+         else if(n==6){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             potencia(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 7) Fatoração
+         else if(n==7){
+             printf("Digite um valor: ");
+             scanf("%d", &entrada1);
+             fatoracao(entrada1, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 8) AND bit a bit
+         else if(n==8){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             and_bit_a_bit(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 9) OR bit a bit
+         else if(n==9){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             or_bit_a_bit(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 10) XOR bit a bit
+         else if(n==10){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             xor_bits(entrada1, entrada2, 0, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 11) Shift direita
+         else if(n==11){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             shiftDir(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 12) Shift esquerda
+         else if(n==12){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             Shift_A_Esquerda(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 13) Média
+         else if(n==13){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             media(entrada1, entrada2, &resposta_double);
+             printf ("Resultado da operação %s: %.2lf\n" ,   funcoes[n-1], resposta_double);
+         }
+     
+         // 14) Somatório de intervalo
+         else if(n==14){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             s_intervalo(entrada1, entrada2, &resposta_lld);
+             printf ("Resultado da operação %s: %lld\n" ,   funcoes[n-1], resposta_lld);
+         }
+     
+         // 15) Produtório intervalo
+         else if(n==15){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             produtorio_intervalo(entrada1, entrada2, &resposta_lld);
+             printf ("Resultado da operação %s: %lld\n" ,   funcoes[n-1], resposta_lld);
+         }
+     
+         // 16) Mínimo
+         else if(n==16){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             min(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 17) Máximo
+         else if(n==17){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             maximo(entrada1, entrada2, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 18) Absoluto
+         else if(n==18){
+             printf("Digite um valor: ");
+             scanf("%d", &entrada1);
+             absoluto(entrada1, &resposta);
+             printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+         }
+     
+         // 19) Igualdade
+         else if(n==19){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             Igualdade(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 20) Diferente
+         else if(n==20){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             diferente(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 21) Maior que
+         else if(n==21){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             maiorq(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 22) Menor que
+         else if(n==22){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             menor_que(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 23) Maior igual
+         else if(n==23){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             maior_igual(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 24) Menor igual
+         else if(n==24){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             menor_igual(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 25) AND lógico
+         else if(n==25){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             and_logico(entrada1, entrada2, &resposta);
+             if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
+             else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
+         }
+     
+         // 26) NAND
+         else if(n==26){
+             printf("Digite dois valores: ");
+             scanf("%d%d", &entrada1, &entrada2);
+             NAND(entrada1, entrada2, &resposta);
         if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
         else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
     }
@@ -330,6 +345,7 @@ int main(){
         if(resposta==1)printf ("Resultado da operação %s: SIM\n" ,   funcoes[n-1]);
         else printf ("Resultado da operação %s: NAO\n" ,   funcoes[n-1]);
     }
+}
 
     return 0;
 }
@@ -487,4 +503,7 @@ void nor( int entrada1, int entrada2, int * resposta){ //28
     if(entrada1==0&&entrada2==0)*resposta=1;
     else *resposta = 0;
 
+}
+void limparTela(void) {
+    printf("\033[2J\033[1;1H");
 }
