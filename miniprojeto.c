@@ -25,7 +25,7 @@ void maiorq( int entrada1, int entrada2, int * resposta); //21
 void menor_que(int entrada1, int entrada2, int *resposta); //22
 void maior_igual(int entrada1, int entrada2, int * resposta); //Função 23
 void menor_igual( int entrada1, int entrada2, int * resposta); //24
-void and(int entrada1, int entrada2, int * resposta); //25
+void and_logico(int entrada1, int entrada2, int * resposta); //25
 void NAND(int entrada1, int entrada2, int * resposta); //26
 //27
 void nor( int entrada1, int entrada2, int * resposta); //28
@@ -269,7 +269,7 @@ int main(){
     else if(n==22){
         printf("Digite dois valores: ");
         scanf("%d%d", &entrada1, &entrada2);
-        menor(entrada1, entrada2, &resposta);
+        menor_que(entrada1, entrada2, &resposta);
         printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n-1], resposta);
     }
 
@@ -309,7 +309,7 @@ int main(){
     else if(n==27){
         printf("Digite dois valores: ");
         scanf("%d%d", &entrada1, &entrada2);
-        OR(entrada1, entrada2, &resposta);
+        OR_logico(entrada1, entrada2, &resposta);
         printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n-1], resposta);
     }
 
@@ -447,10 +447,12 @@ void menor_igual( int entrada1, int entrada2, int * resposta){ //24
     if ( entrada1 <= entrada2 ) * resposta = 1;
     else * resposta = 0;
 }
-void and(int entrada1, int entrada2, int * resposta){ //25
-
-    if((entrada1==1 && entrada2==0) || (entrada1==0 && entrada2==1)) *resposta = 0;
-    if((entrada1==1 && entrada2==1) || (entrada1==0 && entrada2==0)) *resposta = 1;
+void and_logico(int entrada1, int entrada2, int *resposta){ //25
+    if (entrada1 == 1 && entrada2 == 1) {
+        *resposta = 1;
+    } else {
+        *resposta = 0;
+    }
 }
 void NAND(int entrada1, int entrada2, int * resposta){ //26
     if(entrada1==1 && entrada2==1) *resposta = 0;
