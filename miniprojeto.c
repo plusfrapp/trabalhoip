@@ -10,7 +10,7 @@ void potencia(int entrada1, int entrada2, int * resposta); //6
 void fatoracao(int entrada1, int * resposta); //7
 void and_bit_a_bit(int entrada1, int entrada2, int *resposta); //8
 void or_bit_a_bit(int entrada1, int entrada2, int * resposta); // Função 9
-void xor_bits( int entrada1, int entrada2, int tam, int * resposta); //10
+void xor_bits( int entrada1, int entrada2, int * resposta); //10
 void shiftDir(int entrada1, int entrada2, int *resposta); //11
 void Shift_A_Esquerda(int entrada1, int entrada2, int * resposta); //12
 void media(int entrada1, int entrada2, double * resposta_double); //13
@@ -147,8 +147,8 @@ int main(){
              if(entrada2==0){
                  printf("Numero invalido\n");
              }else{
-                 Resto(entrada1, entrada2, &resposta);diferente(entrada1, entrada2, &resposta);
-                 printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
+                Resto(entrada1, entrada2, &resposta);
+                printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
              }
          }
      
@@ -188,7 +188,7 @@ int main(){
          else if(n==10){
              printf("Digite dois valores: ");
              scanf("%d%d", &entrada1, &entrada2);
-             xor_bits(entrada1, entrada2, 0, &resposta);
+             xor_bits(entrada1, entrada2, &resposta);
              printf ("Resultado da operação %s: %d\n" ,   funcoes[n-1], resposta);
          }
      
@@ -390,18 +390,14 @@ void and_bit_a_bit(int entrada1, int entrada2, int *resposta) { //8
 void or_bit_a_bit(int entrada1, int entrada2, int * resposta){ //9
     *resposta = entrada1 | entrada2;
 }
-void xor_bits( int entrada1, int entrada2, int tam, int * resposta){ //10
+void xor_bits( int entrada1, int entrada2, int * resposta){ //10
     * resposta = entrada1 ^ entrada2;
 }
 void shiftDir(int entrada1, int entrada2, int * resposta) { //11
-    int pow;
-    potencia(2, entrada2, &pow);
-    *resposta = entrada1/pow;
+    *resposta = entrada1 >> entrada2;
 }
 void Shift_A_Esquerda(int entrada1, int entrada2, int * resposta){ //12
-    int pow;
-    potencia(2,entrada2,&pow);
-    *resposta = entrada1*pow;
+    *resposta = entrada1 << entrada2;
 }
 void media(int entrada1, int entrada2, double * resposta_double){ //13
 
@@ -496,7 +492,7 @@ void NAND(int entrada1, int entrada2, int * resposta){ //26
 void OR_logico(int entrada1, int entrada2, int * resposta){ //27
     if (entrada1==1) *resposta=1;
     else if(entrada2==1)*resposta=1;
-    else if(entrada1==0&&entrada2==0) *resposta=0;
+    else *resposta=0;
 }
 void nor( int entrada1, int entrada2, int * resposta){ //28
 
