@@ -13,7 +13,7 @@ void or_bit_a_bit(int entrada1, int entrada2, int * resposta); // Função 9
 void xor_bits( int entrada1, int entrada2, int tam, int * resposta); //10
 void shiftDir(int entrada1, int entrada2, int *resposta); //11
 void Shift_A_Esquerda(int entrada1, int entrada2, int * resposta); //12
-//13
+void media(int entrada1, int entrada2, double * resposta_double); //13
 void s_intervalo( int entrada1, int entrada2, long long int * resposta); //14
 void produtorio_intervalo(int entrada1, int entrada2, long long int *resposta); //15
 void min(int entrada1, int entrada2, int * resposta); // Função 16
@@ -197,8 +197,8 @@ int main(){
     else if(n==13){
         printf("Digite dois valores: ");
         scanf("%d%d", &entrada1, &entrada2);
-        media(entrada1, entrada2, &resposta);
-        printf ("Resultado da operação  %s :  %d\n" ,   funcoes[n-1], resposta);
+        media(entrada1, entrada2, &resposta_double);
+        printf ("Resultado da operação  %s :  %.2lf\n" ,   funcoes[n-1], resposta_double);
     }
 
     // 14) Somatório de intervalo
@@ -376,6 +376,11 @@ void Shift_A_Esquerda(int entrada1, int entrada2, int * resposta){ //12
     int pow;
     potencia(2,entrada2,&pow);
     *resposta = entrada1*pow;
+}
+void media(int entrada1, int entrada2, double * resposta_double){ //13
+
+    *resposta_double=(entrada1+entrada2)/2.0;
+
 }
 void s_intervalo( int entrada1, int entrada2, long long int * resposta){ //14
 
